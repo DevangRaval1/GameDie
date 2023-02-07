@@ -10,6 +10,19 @@ GameDie::GameDie()
       counter[i] = 0;
 }
 
+GameDie::GameDie(unsigned int sides)
+{
+    srand(time(NULL));
+    if(sides%2 == 0 && sides>0){
+        for(int i=0;i<sides;i++){
+            counter[i] = 0;
+        }
+    }
+    else{
+        cout << "Enter an even number/positive number" << endl;
+    }
+}
+
 //generate a random number between 1-6 (inclusive) and return it
 int GameDie::roll()
 {
