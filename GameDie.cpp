@@ -8,15 +8,17 @@ using namespace std;
 GameDie::GameDie()
 {
     srand(time(NULL));
-    for(int i=0; i<SIDES; i++)
+    for(int i=0; i<FACES; i++)
       counter[i] = 0;
 }
 
 //generate a random number between 1-6 (inclusive) and return it
 int GameDie::roll()
 {
-    int roll = rand() % SIDES;
+
+   
     // vector<int> dist;
+    int roll = rand() % FACES;
 
     counter[roll]++;
     return roll + 1;
@@ -25,7 +27,7 @@ int GameDie::roll()
 vector<int> GameDie::get_distribution()
 {
     vector<int> distribution;
-    for(int i=0; i<SIDES;i++){
+    for(int i=0; i<FACES;i++){
         distribution.push_back(counter[i]);
     }
     return distribution;
